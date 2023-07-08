@@ -1,0 +1,84 @@
+body, html {height: 100%;padding: 0; margin: 0;}
+body {background-image: url(textile.png); background-color: #103070}/* 3D3D3D */
+#container {height: 100%;}
+#container > table {width: 80%;height: 100%;margin: 0 auto;}
+#container > table td {vertical-align: center;}
+#loginTable{
+	background-image:url(bgimg.png); background-color:#FFFFFF; 
+    border-radius:19px 19px 19px 1px;
+    -moz-border-radius:19px 19px 19px 1px;
+	-webkit-border-top-left-radius:10px;
+  	-webkit-border-top-right-radius:10px;
+  	-webkit-border-bottom-right-radius:10px;
+  	-webkit-border-bottom-left-radius:1px;
+	
+	box-shadow: #282828 10px 10px 10px;
+	-moz-box-shadow: #282828 10px 10px 10px;
+    -webkit-box-shadow: #282828 10px 10px 10px;
+	
+    behavior: url(PIE.htc);
+}
+#loginform {width: 100%;height: 280px;margin: 0 auto;}
+#loginform #text1{font-family: Tahoma;font-size: 12px;text-align: left;line-height: 15px;padding: 0 9px 5px 0;color: #666;}
+#loginform input {
+	display: block;
+	margin-left: 6px;margin-bottom: 6px;margin-top: 6px;
+	height: 23px;width: 155px;
+	line-height: 20px;
+	font-family: sans-serif;font-size: 13px;
+	
+	border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+}
+#loginform input#sendVC,
+#loginform input#sendVCN,
+#loginform input[type=submit]{background-image: url(login-button.png);
+    width: 110px;height: 35px;border: none;background-color: transparent;
+    font-family: Tahoma;font-size: 11px;text-align: right;line-height: 15px;
+    padding: 0 9px 5px 0;color: #666;cursor: pointer;}
+#loginform input#sendVC:hover,
+#loginform input#sendVCN:hover,
+#loginform input[type=submit]:hover {background-position: 0 -35px;}
+#loginform input#sendVC:disabled,
+#loginform input#sendVC:[disabled],
+#loginform input#sendVCN:disabled,
+#loginform input#sendVCN:[disabled]{color: #cccccc;}
+.nad-logo{
+    background-image:url(nad-logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-right: 10px;
+}
+.ito-logo{
+    background-image:url(ito-logo.png);
+    background-repeat: no-repeat;
+    background-position: 20px 0px;
+}
+.besmeallah{
+    background-image:url(besmeallah.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.mandatoryField {color: red;}
+.mydialoge{direction:RTL;font-family:Tahoma;}
+* {font-family: Tahoma;font-size: small;}
+.btmText{font-family: Tahoma !important;font-size: 9px !important;line-height: 13px !important;color: #666 !important;}
+.ui-dialog-buttonset {direction: Rtl;}
+
+.br-top {
+    border-top:thin solid;
+    border-color:#C5C5D5;
+}
+.br-bottom {
+    border-bottom:thin solid;
+    border-color:#C5C5D5;
+}
+.br-left {
+    border-left:thin solid;
+    border-color:#C5C5D5;
+}
+.br-right {
+    border-right:thin solid;
+    border-color:#C5C5D5;
+}

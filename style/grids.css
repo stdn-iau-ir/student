@@ -1,0 +1,122 @@
+.datagrid {
+    background-color: #F2F2F2;
+    -moz-border-radius: 5px;
+    border: 1px solid #ccc;
+    margin : -4px 0 0 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 1px;
+    padding-bottom: 20px;
+}
+
+.datagrid table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.datagrid thead th {
+    padding: 3px;
+    background-color: #999;
+    color: #fff;
+    text-align: right;
+    margin: 0;
+    border-right:1px solid #AAA;
+}
+.datagrid tbody td {
+    padding: 3px;
+    padding-bottom:5px;
+    margin:0;
+    border-right:1px solid #ddd;
+    cursor: default;
+}
+.datagrid tbody td:first-child {
+    border: none;
+}
+.datagrid tbody .odd td {
+    background-color: #fff;
+}
+.datagrid tbody .over td {
+    background-color: #D3DAEE;
+}
+.datagrid tbody .selected td {
+    background-color: #B6D1AC;
+}
+.datagrid tbody .odd.selected td {
+    background-color: #C8E2BE;
+}
+.datagrid thead .sortableColumn, .datagrid thead .clickedColumnAsc, .datagrid thead .clickedColumnDes {
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 5px center;
+}
+.datagrid thead .clickedColumnAsc {
+    background-image: url(grid-header-sortasc.png);
+}
+.datagrid thead .clickedColumnDes {
+    background-image: url(grid-header-sortdesc.png);
+}
+
+div.paging {
+    background-color: #ccc;
+    -moz-border-radius: 5px;
+    padding: 5px 2px 2px 2px;
+    margin: 0 5px 10px;
+}
+div.paging table {
+    width: 100%;
+}
+div.paging table td {
+    padding: 0 5px;
+}
+div.paging button {
+    background-repeat: no-repeat;
+}
+div.paging button.next {
+    background: #eee url(grid-paging-left.png) no-repeat 5% center;
+    padding-left: 22px;
+}
+div.paging button.prev {
+    background: #eee url(grid-paging-right.png) no-repeat 95% center;
+    padding-right: 22px;
+}
+
+.gridbuttons {
+    -moz-border-radius: 5px;
+    padding:5px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+.gridbuttons table{
+    width: 100%;
+}
+
+.datagrid .grid-scrollbar {
+    text-align: left;
+    position: absolute;
+    height: 18px;
+    background-image: url(scrollbar-bg.png);
+    background-repeat: repeat-x;
+}
+.datagrid .grid-scrollbar .slider {
+    width: 100px;
+    height: 18px;
+    background-image: url(scrollbar-slider.png);
+}
+
+.dynamictable th {
+    padding: 4px;
+}
+.dynamictablebuttons .addButton , .dynamictablebuttons .removeButton {
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 25px;
+    height: 25px;
+    border-width: 1px;
+    -moz-border-radius: 5px;
+}
+.dynamictablebuttons .addButton {
+    background-image: url(icon.add.png);
+}
+.dynamictablebuttons .removeButton {
+    background-image: url(icon.remove.png);
+}

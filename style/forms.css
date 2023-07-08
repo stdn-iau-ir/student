@@ -1,0 +1,130 @@
+fieldset {
+    border: 1px solid #ccd;
+    padding: 10px;
+    background-color:#e9edf2;
+    background-repeat:repeat-x;
+    #background-image: url(fieldsetbg.png);
+    text-align: right;
+    zoom: 1;
+    -moz-border-radius: 5px;
+}
+fieldset legend {
+    background-color: #c8d7e9;
+    padding: 5px 10px;
+    -moz-border-radius: 3px;
+}
+fieldset table table td {
+    border-bottom: 1px solid #fff;
+}
+fieldset th {
+    text-align: right;
+    background-color: #568;
+    color: #fff;
+    padding-right:5px;
+    padding-left:5px;
+}
+fieldset table table th {
+    background-color: #679;
+}
+fieldset .datapanel {
+    background-color: #fff;
+    padding: 5px;
+    margin: 5px 0;
+    -moz-border-radius: 5px;
+}
+#maincontent .pagebuttons button{
+/*    background-color: #fff;
+     color: #464;
+*/     
+}
+
+#maincontent .pagebuttons button:hover{
+  background-color: #abd6ff;	
+}
+
+#maincontent .pagebuttons button:active {
+    background-color:#97bde1;
+}
+.gradiantButton{
+	      border: 1px solid #769dc0;
+  padding: 4px 0 4px 0;
+  background-image: url("button.png");
+  background-position: center top;
+  background-repeat: repeat-x;
+  background-color: #e9f4fe;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+ 
+}
+.gradiantButton:hover{
+  background-color: #abd6ff;	
+}
+.gradiantButton:active{
+  background-color: #97bde1;
+  -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  -moz-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.1s;
+  -moz-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+}
+
+.button {
+    border-width: 0;
+    padding:2px 20px 2px 2px;
+    -moz-border-radius: 4px;
+    background-color:#eee; /*d0e2f4*/
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 96% center;
+	margin-bottom:6px;
+}
+.button:hover {
+    background-color:#abd6ff;
+}
+.button:active {
+    background-color:#97bde1;
+}
+.button:disabled {
+  background-color: ButtonFace;
+  color: GrayText;
+}
+
+.buttonOld {
+    border-width: 1px;
+    padding: 3px 20px 3px 3px;
+    #padding: 1px 12px 1px 1px;
+    -moz-border-radius: 4px;
+    background-color:#eee;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 96% center;
+    margin-bottom: 3px;
+}
+.buttonOld:hover {
+    background-color:#FAECD4;
+}
+
+
+.buttonspanel {
+    background-color: #d3dae9;
+    margin: 5px -8px -8px -8px;
+    -moz-border-radius: 3px;
+    padding: 5px 5px 2px 5px;
+    text-align: center;
+}
+.buttonspanel table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+}
+.buttonspanel table td{
+    padding: 2px 4px;
+}
+
+.savebuttonstd {
+    text-align: left;
+}
