@@ -1,0 +1,909 @@
+<!DOCTYPE html >
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Language" content="fa">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+    
+
+
+
+
+
+ 
+
+<style type="text/css">
+    @import "style/dojo.css";
+    @import "style/claro.css";
+    @import "style/dijit.css";
+</style>
+<script type="text/javascript">
+    var djConfig = {
+        parseOnLoad: true,
+        modulePaths: {
+            "itorbit":"/Student/js/itorbit"
+        }
+    }
+    var itorbitConfig = {
+        isClassic : false
+    }
+</script>
+<script type="text/javascript" src="style/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="style/dojo.js" data-dojo-config="parseOnLoad: true"></script>
+<script type="text/javascript" src="style/shortcut.js"></script>
+
+
+<script type="text/javascript" src="style/common.js"></script>
+
+<script type="text/javascript" src="style/dom-drag.js"></script>
+<script type="text/javascript" src="style/list_edit.js"></script>
+<script type="text/javascript" src="style/procedure.js"></script>
+<script type="text/javascript" src="style/execJS.js"></script>
+<script type="text/javascript" src="style/func.js"></script>
+
+<script type="text/javascript" src="style/overlib_mini.js"></script>
+<script type="text/javascript" src="style/calendar.js"></script>
+<script type="text/javascript" src="style/ito_calendar.js"></script>
+<script type="text/javascript" src="style/ajax.js"></script>
+<script type="text/javascript" src="style/ajaxc.js"></script>
+
+<script type="text/javascript" src="style/sortabletable.js"></script>
+<script type="text/javascript" src="style/tiny_mce.js"></script>
+<script type="text/javascript" src="style/ajax_sessions.js"></script>
+<link rel="stylesheet" type="text/css" href="style/pro_dropdown_2.css" />
+<link href="style/main.css" type="text/css" rel="stylesheet" />
+
+<!--[if lt IE 7]>
+<link href="/Student/themes/sky/ie6.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="/Student/js/ie6.js"></script>
+<![endif]-->
+<style>
+.dijitDialogCloseIcon{
+/*	display: none !important;*/
+}
+.dijitTabCloseButton {
+    margin-left: -5px !important;
+    margin-right: 5px !important;
+}
+
+</style>
+<link rel="stylesheet" type="text/css" href="style/shadowbox.css">
+<script type="text/javascript" src="style/shadowbox.js"></script>
+<script type="text/javascript">
+	Shadowbox.init();
+</script>
+
+
+    <title>سيستم آموزشیار - دانشجویی</title>
+
+
+<script type="text/javascript">
+   dojo.require("dijit.form.TextBox");
+   dojo.require("dijit.form.Button");
+   dojo.require("dijit.form.Textarea");
+</script>
+
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Language" content="fa">
+
+
+
+<style type="text/css">
+    @import "style/dojo.css";
+    @import "style/tundra.css";
+    @import "style/dijit.css";
+</style>
+<script type="text/javascript">
+    var djConfig = {
+        parseOnLoad: true,
+        modulePaths: {
+            "itorbit":"/Student/js/itorbit"
+        }
+    }
+    var itorbitConfig = {
+        isClassic : false
+    }
+</script>
+<script type="text/javascript" src="style/dojo.js"></script>
+
+<link href="style/main.css" type="text/css" rel="stylesheet" />
+<!--[if lt IE 7]>
+<link href="/Student/themes/sky/ie6.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="/Student/js/ie6.js"></script>
+<![endif]-->
+
+<script type="text/javascript" src="style/procedure.js"></script>
+<script type="text/javascript" src="style/func.js"></script>
+
+<script type="text/javascript" src="style/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="style/jquery-ui-1.8.19.custom.min.js"></script>
+
+<script type="text/javascript">
+    dojo.require('itorbit.ui.TestMenu');
+    
+    var onloadFn = function(){
+        dojo.query("#mainmenu ul li li:first-child").addClass("first");
+        dojo.query("#mainmenu form > ul, #mainmenu form > ul > li").addClass("l1");
+        new itorbit.ui.TestMenu({}, 'mainmenu');
+    };
+    dojo.addOnLoad(onloadFn);
+</script>
+<!-- <base href="https://stdn.iau.ir/Student/" /> -->
+
+
+</head>
+
+
+
+
+<body onload="initAll();setInterval('doAjax(handleResponse4Msg, __msgUrl)', 300000);"
+    class="claro loading "
+    defer="defer"
+    >
+
+    <div id="loading"><div>لطفا کمي صبر نماييد...</div></div>
+
+    <div id="container">
+        <table id="maintable"><tr><td class="maintable-main">
+          <table id="innertable"><tr>
+            
+              <td class="innertable-sidebar">
+                <div id="sidebar">
+                    <h1 id="header">
+                        <a href="startAction.do" style="background-image: url('style/logo-default.jpg')"><span>NAD</span></a>
+                        <span>سامانه مدیریت یکپارچه امور آموزشی - <font color="#ea5200">آموزشیار</font></span>
+                    </h1>
+                    <div id="menucontainer">
+                      
+                          
+                        <div id="mainmenu" dojoType="itorbit.ui.TestMenu" singleOpenedItem="false" dir="rtl">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <link href="style/menu.css" type="text/css" rel="stylesheet" />
+                            
+                            <form name="itoForm" method="post" action="/Student/startAction.do" onsubmit="return false" target="_top"><input type="hidden" name="org.apache.struts.taglib.html.TOKEN" value="37303596de2aa09d13c1088e832a0fb4">
+                            
+                            
+                            <input type="text" id="autoCompleteBox" placeholder="جستجوي منو..." class="myautocompl"/>
+                                <script type="text/javascript">
+                                    $(function () {
+                                        $("#autoCompleteBox").farsiInput();
+                                    });
+                                </script>
+                            <ul class="l1">
+                            
+                            <li class="l1"><strong><span><a href="https://stdn.iau.ir/Student/Pages/acmstd/loginPage.jsp">برنامه ريزي آموزشي نيمسال تحصيلي</a></span></strong><ul>
+                             
+                                 
+                            <li><a id="mi_0_0" style="background-image: url(Pages/images/icons/jostejooye-kelase-dars.png)"
+                            href="javascript: void(0);" onclick="handleUrl(this)" data-commandUrl="handleCourseClassSearchAction.do?parameter%28menuItem%29=0_0&dispatch=selectStudentParameter&subject=CourseClass&editable=false&previewable=false&parameter%28f%5EtermRef%29=%24%7BuserProperty%28operationalTerm.id%29%7D&addable=false&refParameter%28selectedText%29=parameter%28courseClassText%29&form=CourseClassList2student&selection=0&parameter%28groupIndex%29=0&deleteable=false&parameter%28finder%29=findCourseClass4Student&refParameter%28selectedId%29=parameter%28courseClassRef%29&parameter(menuItem)=0_0&parameter(groupIndex)=0&__rp=948735391&menuGroup=Planning&menuItemName=StudentCourseClassAllSearch&_H0__=-40" onmouseover="null" onmouseout="null" >
+                            <span>جستجوي كلاس درسهای ارائه شده</span></a></li>
+                             
+                            </ul></li>
+                            <li class="l1"><strong><span><a href="https://stdn.iau.ir/Student/Pages/acmstd/loginPage.jsp">ثبت نام دروس دانشجو</a></span></strong><ul>
+                             
+                                 
+                            <li><a id="mi_1_0" style="background-image: url(Pages/images/icons/Entekhab-Vahed.png)"
+                            href="javascript: void(0);" onclick="handleUrl(this)" data-commandUrl="selectStudentAction.do?parameter%28menuItem%29=1_0&parameter%28f%5EorganRef%29=%24%7BuserProperty%28operationalFacultyGroup.id%29%7D&parameter%28groupIndex%29=1&subject=NewRegisterationMasterDetail&parameter%28exception%29=NULL&parameter%28studentSelectNextForward%29=%2FregisterationAction.do%3Fdispatch%3Dinit&parameter%28studentSelectFinder%29=findKnownStudentWithNative&validator=FacultyGroupTermsValidator&reset=true&OrganCheck=FacultyGroup&Projects=Education&operation=RESET&parameter(menuItem)=1_0&parameter(groupIndex)=1&__rp=948350642&menuGroup=Student_Registration&menuItemName=NewRegisteration&_H0__=532" onmouseover="null" onmouseout="null" >
+                            <span>انتخاب واحد</span></a></li>
+                             
+                                 
+                            <li><a id="mi_1_1" style="background-image: url(Pages/images/icons/hazfe-and-ezafeh.png)"
+                            href="javascript: void(0);" onclick="handleUrl(this)" data-commandUrl="selectStudentAction.do?parameter%28menuItem%29=1_1&parameter%28f%5EorganRef%29=%24%7BuserProperty%28operationalFacultyGroup.id%29%7D&parameter%28groupIndex%29=1&subject=NewAddDropMasterDetail&parameter%28exception%29=NULL&parameter%28studentSelectNextForward%29=%2FaddDropAction.do%3Fdispatch%3Dinit&parameter%28studentSelectFinder%29=findKnownStudentWithNative&validator=FacultyGroupTermsValidator&reset=true&OrganCheck=FacultyGroup&Projects=Education&parameter(menuItem)=1_1&parameter(groupIndex)=1&__rp=948350642&menuGroup=Student_Registration&menuItemName=NewAddDrop&_H0__=238" onmouseover="null" onmouseout="null" >
+                            <span>حذف و اضافه</span></a></li>
+                             
+                                 
+                            <li><a id="mi_1_2" style="background-image: url(Pages/images/icons/hazfe-ezterari.png)"
+                            href="javascript: void(0);" onclick="handleUrl(this)" data-commandUrl="selectStudentAction.do?parameter%28menuItem%29=1_2&parameter%28f%5EorganRef%29=%24%7BuserProperty%28operationalFacultyGroup.id%29%7D&parameter%28groupIndex%29=1&subject=NewEmergencyMasterDetail&parameter%28exception%29=NULL&parameter%28studentSelectNextForward%29=%2FemergencyAction.do%3Fdispatch%3Dinit&parameter%28studentSelectFinder%29=findKnownStudentWithNative&validator=FacultyGroupTermsValidator&OrganCheck=FacultyGroup&Projects=Education&parameter(menuItem)=1_2&parameter(groupIndex)=1&__rp=948350642&menuGroup=Student_Registration&menuItemName=NewEmergency&_H0__=173" onmouseover="null" onmouseout="null" >
+                            <span>حذف اضطراري</span></a></li>
+                             
+                                 
+                            <li><a id="mi_1_3" style="background-image: url(Pages/images/icons/moshahede-akharin-vazeyate-entekhab-vahed.png)"
+                            href="javascript: void(0);" onclick="handleUrl(this)" data-commandUrl="confirmSelectStudentAction.do?parameter%28menuItem%29=1_3&form=LastStatusConfirmStudentList&parameter%28f%5EcurrentTerm%29=%24%7BuserProperty%28operationalTerm.id%29%7D&parameter%28groupIndex%29=1&subject=ConfirmStudent&reset=true&finder=findForLastStatusReport&parameter(menuItem)=1_3&parameter(groupIndex)=1&__rp=948350642&menuGroup=Student_Registration&menuItemName=LastStatus_Verification&_H0__=48" onmouseover="null" onmouseout="null" >
+                            <span>مشاهده آخرين وضعيت ثبت نام (ترم جاري)</span></a></li>
+                             
+                                 
+                            <li><a id="mi_1_4" style="background-image: url(Pages/images/icons/modiriyate-nimsalhaye-tahsili.png)"
+                            href="javascript: void(0);" onclick="handleUrl(this)" data-commandUrl="studentLastStatusAction.do?parameter%28menuItem%29=1_4&parameter%28groupIndex%29=1&reset=true&operation=tuition&parameter(menuItem)=1_4&parameter(groupIndex)=1&__rp=948350642&menuGroup=Student_Registration&menuItemName=StudentLastStatus&_H0__=74" onmouseover="null" onmouseout="null" >
+                            <span>مديريت مالی نيمسال‌هاي تحصيلي دانشجو</span></a></li>
+                             
+                                 
+                            <li><a id="mi_1_5" style="background-image: url(Pages/images/icons/doroose-ghabele-eraeh.png)"
+                            href="javascript: void(0);" onclick="handleUrl(this)" data-commandUrl="studentLastStatusAction.do?parameter%28menuItem%29=1_5&current=true&parameter%28groupIndex%29=1&reset=true&operation=ePayment&parameter(menuItem)=1_5&parameter(groupIndex)=1&__rp=948350642&menuGroup=Student_Registration&menuItemName=StudentRequirements4Payment&_H0__=163" onmouseover="null" onmouseout="null" >
+                            <span>مدیریت پرداختها</span></a></li>
+                             
+                                 
+                            <li><a id="mi_1_6" style="background-image: url(Pages/images/icons/modiriyate-nimsalhaye-tahsili.png)"
+                            href="javascript: void(0);" onclick="handleUrl(this)" data-commandUrl="studentLastStatusAction.do?parameter%28menuItem%29=1_6&current=true&parameter%28groupIndex%29=1&reset=true&operation=objection&parameter(menuItem)=1_6&parameter(groupIndex)=1&__rp=948350642&menuGroup=Student_Registration&menuItemName=ObjectionGradeCurrent&_H0__=27" onmouseover="null" onmouseout="null" >
+                            <span>ارسال درخواست اعتراض به نمره در نيمسال جاري</span></a></li>
+                             
+                                 
+                            <li><a id="mi_1_7" style="background-image: url(Pages/images/icons/moshahede-karname-daneshjooei.png)"
+                            href="javascript: void(0);" onclick="handleUrl(this)" data-commandUrl="LoadWorkSheetAction.do?dispatch=View&parameter%28menuItem%29=1_7&parameter%28flag%29=false&parameter%28groupIndex%29=1&subject=LoadStudentWorkBook&studentRequest=true&parameter(menuItem)=1_7&parameter(groupIndex)=1&__rp=948350642&menuGroup=Student_Registration&menuItemName=ViewStudentWorkBook&_H0__=661" onmouseover="null" onmouseout="null" >
+                            <span>مشاهده كارنامه دانشجویی</span></a></li>
+                             
+                            </ul></li>
+                            <li class="l1"><strong><span><a href="https://stdn.iau.ir/Student/Pages/acmstd/loginPage.jsp">صندوق رفاه دانشجویی</a></span></strong><ul>
+                             
+                                 
+                            <li><a id="mi_2_0" style="background-image: url(Pages/images/icons/noIcon.gif)"
+                            href="javascript: void(0);" onclick="handleUrl(this)" data-commandUrl="studentLastStatusAction.do?parameter%28menuItem%29=2_0&parameter%28groupIndex%29=2&reset=true&operation=loanRequest&parameter(menuItem)=2_0&parameter(groupIndex)=2&__rp=948350642&menuGroup=StudentWelfareFund&menuItemName=StudentLoanRequest&_H0__=-54" onmouseover="null" onmouseout="null" >
+                            <span>درخواست/پیگیری تسهیلات</span></a></li>
+                             
+                            </ul></li>
+                            <li class="l1"><strong><span><a href="https://stdn.iau.ir/Student/Pages/acmstd/loginPage.jsp">درخواست/مجوز</a></span></strong><ul>
+                             
+                                 
+                            <li><a id="mi_3_0" style="background-image: url(Pages/images/icons/sabte-darkhast.png)"
+                            href="javascript: void(0);" onclick="handleUrl(this)" data-commandUrl="studentLastStatusAction.do?parameter%28menuItem%29=3_0&parameter%28groupIndex%29=3&reset=true&operation=studentRequest&parameter(menuItem)=3_0&parameter(groupIndex)=3&__rp=948350642&menuGroup=Office&menuItemName=StudentRequest&_H0__=334" onmouseover="null" onmouseout="null" >
+                            <span>ارسال/ پیگیری درخواست دانشجو</span></a></li>
+                             
+                            </ul></li>
+                            <li class="l1"><strong><span><a href="worksheet.html">مشاهده کارنامه</a></span></strong><ul>
+                             
+                                 
+                            <li><a id="mi_4_0" style="background-image: url(Pages/images/icons/modiriyate-nimsalhaye-tahsili.png)"
+                            href="javascript: void(0);" onclick="handleUrl(this)" data-commandUrl="studentLastStatusAction.do?parameter%28menuItem%29=4_0&current=true&parameter%28groupIndex%29=4&reset=true&operation=evaluation&parameter(menuItem)=4_0&parameter(groupIndex)=4&__rp=948350642&menuGroup=Evaluation&menuItemName=EvaluationProffCurrent&_H0__=196" onmouseover="null" onmouseout="null" >
+                            <span>ارزشيابي استاد در نيمسال جاري</span></a></li>
+                             
+                            </ul></li>
+                            <li class="l1"><strong><span><a href="https://stdn.iau.ir/Student/Pages/acmstd/loginPage.jsp">مديريت امور خوابگاه ها</a></span></strong><ul>
+                             
+                                 
+                            <li><a id="mi_5_0" style="background-image: url(Pages/images/icons/takhliye-tamdide-omoomi.png)"
+                            href="javascript: void(0);" onclick="handleUrl(this)" data-commandUrl="office/selectOfficeStudentAction.do?parameter%28menuItem%29=5_0&parameter%28groupIndex%29=5&parameter%28exception%29=NULL&parameter%28studentSelectNextForward%29=%2Foffice%2FhandleOfficialRequestAction.do%3Fdispatch%3DshowStudentHabitancy&reset=true&operation=RESET&parameter(menuItem)=5_0&parameter(groupIndex)=5&__rp=948350642&menuGroup=Dormitory&menuItemName=StudentDormitoryRequest_Find&_H0__=-92" onmouseover="null" onmouseout="null" >
+                            <span>ثبت نام تکي</span></a></li>
+                             
+                                 
+                            <li><a id="mi_5_1" style="background-image: url(Pages/images/icons/sabte-darkhast.png)"
+                            href="javascript: void(0);" onclick="handleUrl(this)" data-commandUrl="office/selectOfficeStudentAction.do?parameter%28menuItem%29=5_1&parameter%28groupIndex%29=5&parameter%28exception%29=NULL&parameter%28studentSelectNextForward%29=%2Foffice%2FhandleOfficialRequestAction.do%3Fdispatch%3DsearchStudentRequestBySubjectDispatchType%26subjectDispatchType%3DGUESTDORMREQ%26form%3DStudentGuestOfficialRequestList&reset=true&operation=RESET&parameter(menuItem)=5_1&parameter(groupIndex)=5&__rp=948350642&menuGroup=Dormitory&menuItemName=StudentHabitancyGuestRequest_Find&_H0__=161" onmouseover="null" onmouseout="null" >
+                            <span>ثبت درخواست سكونت مهمان در خوابگاه</span></a></li>
+                             
+                            </ul></li></ul>
+                             <script type="text/javascript">
+                                function handleUrl(elem){
+                                   // rightClick();
+                                   //alert("handler called:\n"+url);
+                                   var cmd = elem.getAttribute("data-commandUrl");
+                                    gotoUrl("itoForm",cmd);
+                                    return false;
+                                }   
+                                  
+                                </script>
+                            </form>
+                            
+                            <script type="text/javascript" src="style/menu.js"></script>
+                            <script type="text/javascript" src="style/jquery.farsiInput.js"></script>
+                                </div>
+                                
+                               
+                            
+                                 
+                             
+                               
+                            
+                                 
+                                
+                          <!--jsp:include page="/Pages/menu.jsp" flush="false"/-->
+                      
+                    </div>
+                </div>
+              </td>
+            
+            <td class="innertable-main">  
+            <div id="maincontent">
+                
+                <div class="heading">
+                    
+
+
+
+
+
+
+
+
+
+    
+        <div class="user-menu">
+            
+                
+                    
+
+
+
+<script language="javascript" >
+function poptastic(url)
+{
+  var newwindow = window.open(url,'name','height=160,width=450,left=200,top=200');
+  if (window.focus)
+  {
+    newwindow.focus()
+  }
+}
+
+function checkForMessage(mess_group, message)
+{
+ //if (message!=null && message!="" && message!="null") {
+ //  alert(mess_group + ": " + message);
+  //}
+}
+</script>
+
+
+    <script language="javascript" >
+      checkForMessage("ERROR", "");
+    </script>
+      
+
+
+<form method="post" action="logout.citadel_security_check" class="logout">
+    <input name="submit" type="submit"  value="خروج">
+</form>
+
+<form method="post" action="javascript:poptastic('logon/password.jsp')" class="changepass">
+    <input name="changePassword" type="submit"  value="تغيير رمز" />
+</form>
+
+
+                
+            
+            
+            
+
+
+
+
+
+
+
+<div class="logintime">
+    زمان ورود :
+    
+    <strong>12:13:45</strong>
+</div>
+
+<div class="username">
+    نام كاربر : 
+    <strong>
+        مليكا آذردانش
+        [ 40111520735216@edu ]
+    </strong> 
+</div>
+
+
+            
+            <span id="messageBoardWrapper">
+            </span>
+        </div>
+    
+
+    
+        <div class="secondrow">
+            <div class="misc-menu">
+                <div class="wrapper">
+                    <a onclick="openWindow('Pages/about.jsp', 600, 320); return false" href="#" class="about">درباره</a>
+                    <a onclick="printSpecial(); return false" title="چاپ صفحه جاري" href="#" class="print">چاپ صفحه جاري</a>
+                </div>
+            </div>
+            
+             
+            <div class="operational-menu">
+                <div class="wrapper">
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+      
+          
+          <a href="javascript: void(); return false;"  onclick = "GotoHref('operationalPropertiesAction.do?myDispatch=init&_H0__=99'); return false;" onmouseout="window.status=''; return true;"
+             onmouseover="window.status='ويرايش محيط كاري'; return true;" >
+            انتخاب 
+          </a>
+    
+      استان:&nbsp;
+      
+      
+      <span title="">
+      
+      </span>
+      |
+      واحد:&nbsp;
+      
+      
+      <span title="">
+      
+      </span>
+      |
+      
+      
+        دانشکده:&nbsp;
+      
+      
+      
+      <span title="">
+      
+      </span>
+      |
+      
+        گروه آموزشی:&nbsp;
+      
+      
+      
+      <span title="">
+      
+      </span>
+      |
+
+      
+      <span title="نیمسال تابستان سال تحصیلی 1402-1401">
+      نيمسال:&nbsp;
+      4013
+      </span>
+
+<script type="text/javascript">
+function toggleWorkspace(but) {
+  var element = document.getElementById('userWorkspace');
+  if (element.style.display == 'none') {
+    but.style.background = 'transparent url(style/delete.gif) no-repeat center';
+    but.title='پنهان';
+    element.style.display = '';
+  } else {
+    but.style.background = 'transparent url(style/add.gif) no-repeat center';
+    but.title='نمايش';
+    element.style.display = 'none';
+  }
+}
+</script>
+
+                </div>
+            </div>
+
+            
+        </div>
+    
+
+
+                    <div style="float:right;margin:-45px 10px 0 0;direction:ltr">
+                    	<div id="showhide" class="myarrow-right" style="cursor:pointer" onclick="doShowHide()"></div>
+                    </div>
+                    <img id="logo2" width="180" height="70" style="display:none;float:right;margin:-71px 33px 0 0;direction:ltr" alt="" src="Pages/images/logo1.png"/>
+                    
+                </div>
+                
+                
+                
+                
+				    
+				    
+                <div id="mainbody">
+                    <div id="pagetitle">
+                    
+                    
+                    
+                  
+                     
+                 
+                        
+                            <h4 class="pagetitle" style="height:45px !important;">صفحه اول</h4>
+                        
+                        
+
+
+
+
+
+
+
+
+
+<form name="loginForm" method="post" action="/Student/returnAction.do"><input type="hidden" name="org.apache.struts.taglib.html.TOKEN" value="a919bae0666f492073aaadb7a354880e"><input type=hidden name="parameter(groupIndex)" value="null"/><input type=hidden name="parameter(menuItem)" value="null"/>
+
+<input type="hidden" name="returnAddress" value="/startAction.do">
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+ <input type="button" name="dummy" accesskey="r" value="    بازگشت" onclick="goBackAndRefreshIfPossible(this.form)" class="returnbutton2">
+
+
+
+
+
+
+
+</form>
+
+
+                    
+                    
+					</div>    
+                    <div class="contentwrap" id="contentwrap" >
+                        
+                        
+                        <div id="breadcrumb" >
+                            <a href="startAction.do"><span>صفحه اول</span></a>
+                            <span>&nbsp</span>
+                              
+                        </div>
+                        
+    
+                        <div class="content" id="content">
+                            <div></div>
+                            <div></div>
+    
+                            
+    							<table width="100%"><tr>
+           	                    
+    								<td valign="top">
+                                        
+    									<div class="homenews homebox">
+    		                                <h4 class="title">اطلاعیه ترم تابستان</h4>
+    		                                <div style="padding:10px;"><!DOCTYPE html>
+<html>
+<body style="direction: rtl">
+
+<h2 style="color: #ff0000; font-family: tahoma;">
+    <b>
+        <p>
+            <mark>قابل توجه دانشجویان گرامی -فرآیند ثبت درخواست انتخاب واحد نیمسال تابستان(4013) به شرح  زیر می باشد:
+</mark>
+        </p>
+    </b></h2>
+<p>
+<h3 style="color: black; font-family: tahoma;">
+    
+ <p style="color: black; font-family: tahoma;">1-از طریق منوی درخواست/مجوز - زیر منوی " ارسال/پیگیری درخواست دانشجو" و به شرح زیر اقدام به ثبت درخواست نمائید.</p> 
+ <p style="color: black; font-family: tahoma;"> 2-در قسمت "ارسال درخواست جدید"،طبقه بندی موضوع را "عملیات آموزشی دانشجو" و موضوع درخواست را "مجوز انتخاب واحد" و نیمسال درخواست معادل "4013" قرار داده و با انتخاب دکمه ی "ثبت" –درخواست مجوز انتخاب واحد نیمسال تابستان ثبت می گردد</p> 
+  
+ <P>
+<lable style="color: black ;font-family: tahoma;"> 3-سپس با توجه به اطلاع رسانی های انجام شده در زمان بندی های مشخص شده و پس از ورود به سامانه ی آموزشیار -منوی "ثبت نام دروس دانشجو" –زیر منوی "انتخاب واحد" اقدام به اخذ دروس و انتخاب واحد نمایید.(زمان بندی ها از طریق سایت آموزشیار به آدرس</lable>
+<lable style="color: black ;font-family: tahoma;"><mark><a href="https://edu.iau.ac.ir/">https://edu.iau.ac.ir/</a></mark></lable>
+<lable style="color: black ;font-family: tahoma;">قابل مشاهده می باشد
+</lable>
+
+</p>
+
+
+ <p>
+<lable style= " color: black ;font-family: tahoma;" ><mark>توضیح مهم :</mark></lable>
+
+<lable style= " color: black ;font-family: tahoma;">در فرایند انتخاب واحد، هنگام جستجوی کلاس درسها از طریق دکمه ی "انتخاب کلاس درس از دروس رشته دانشجو" ابتدا باید اطلاعات مربوط به درس جستجو و انتخاب شود.</lable>
+</p>
+
+ <p style="color: black; font-family: tahoma;">نکته مهم : تسویه بدهی کامل و پیش پرداخت شهریه ی ترم تابستان نیز باید قبل از اقدام به انتخاب واحد توسط دانشجو پرداخت شده باشد.</p> 
+
+
+</body>
+</html>
+
+</div>
+    		                                <div style="clear:both"></div>
+    		                            </div>
+                                        
+    									<div class="homenews homebox">
+    		                                <h4 class="title">صدور ریز نمرات الکترونیکی</h4>
+    		                                <div style="padding:10px;"><!DOCTYPE html>
+<html>
+<body>
+<h3>
+
+
+<p>
+<lable style="color: black ;font-family: tahoma;"><mark>قابل توجه دانشجویان فارغ التحصیل-فرایند صدور  گواهینامه ریزنمرات به صورت الکترونیکی</mark></lable>
+</p>
+
+
+
+<p>
+<lable style="color: black ;font-family: tahoma;">به اطلاع می رساند پیرو دستورالعمل جدید حوزه دانش آموختگان سازمان مرکزی دانشگاه،از تاریخ 27/03/1402 شرایط ارسال درخواست و اخذ گواهینامه ریزنمرات الکترونیکی توسط دانشجویان فارغ التحصیل از طریق سامانه ی آموزشیار امکانپذیر می باشد، که مراحل انجام کار به شرح زیر می باشد: </lable>
+</p>
+
+<p>
+<lable style="color: black ;font-family: tahoma;">1-	منوی "درخواست/مجوز"-زیر منوی </lable>
+<lable style="color: red ;font-family: tahoma;"><mark>"ارسال و پیگیری درخواست دانشجو"</mark></lable>
+<p>
+<lable style="color: black ;font-family: tahoma;">2-	طبقه بندی موضوع را معادل "فارغ التحصیلی" قرار دهید.</lable>
+</p>
+
+<p>
+<lable style="color: black ;font-family: tahoma;">3-	موضوع درخواست با توجه به نیازمندی مورد نظر می تواند با یکی از عناوین زیر ثبت گردد:</lable>
+<br>
+<lable style="color: red ;font-family: tahoma;"><mark>•	"صدور گواهی ریز نمرات قابل ترجمه دانش آموختگان-ارسال به واحد دانشگاهی " :</mark></lable>
+<lable style="color: black ;font-family: tahoma;">در صورتی که این درخواست انتخاب شود دانشجومی تواند پس از تایید، گواهی ریزنمرات صادر شده را با مراجعه به  واحد دانشگاهی تحویل بگیرد.</lable>
+<br>
+<lable style="color: red ;font-family: tahoma;"><mark>•	"صدور گواهی ریز نمرات قابل ترجمه دانش آموختگان-- ارسال توسط پست به آدرس دانشجو " : </mark></lable>
+<lable style="color: black ;font-family: tahoma;">در صورتی که این درخواست انتخاب شود گواهی ریزنمرات صادر شده پس از تایید،توسط پست به آدرس ثبت شده توسط دانشجو ارسال می گردد.</lable>
+</p>
+
+<p>
+<lable style="color: black ;font-family: tahoma;">4-	نیمسال درخواست به صورت اتوماتیک معادل نیمسال فارغ التحصیلی دانشجو درج می شود و سپس اقدام به ثبت درخواست نمایید.</lable>
+</p>
+
+<p>
+<lable style="color: black ;font-family: tahoma;">5-	پس از ثبت درخواست </lable>
+<lable style="color: red ;font-family: tahoma;"><mark>صفحه ی ورود اطلاعات نشانی و بارگذاری تصویر دانشنامه </mark></lable>
+<lable style="color: black ;font-family: tahoma;">نمایش داده می شود، که در این صفحه اقدام به ورود اطلاعات و ثبت درخواست نمایید.</lable>
+</p>
+<p>
+<lable style="color: black ;font-family: tahoma;">6-	پس از ثبت اطلاعات </lable>
+<lable style="color: red ;font-family: tahoma;"><mark>لینک پرداخت الکترونیکی </mark></lable>
+<lable style="color: black ;font-family: tahoma;">در کنار درخواست ثبت شده فعال می شود و دانشجو می بایست جهت رسیدگی به درخواست نسبت به پرداخت هزینه الکترونیکی درج شده در سامانه اقدام نماید، تا زمانی که هزینه ی مورد نظر توسط دانشجو پرداخت نشود بررسی و رسیدگی به درخواست ثبت شده توسط کارشناس حوزه فارغ التحصیلی واحد دانشگاهی امکانپذیر نمی باشد.</lable>
+</p>
+<p>
+<lable style="color: black ;font-family: tahoma;">7-	از این پس مراحل انجام کار از طریق پیام رسان آیگپ به دانشجو اطلاع رسانی می گردد.</lable>
+
+</p>
+
+</h3>
+</body>
+</html>
+<!DOCTYPE html>
+
+
+</div>
+    		                                <div style="clear:both"></div>
+    		                            </div>
+                                        
+    								</td>
+        	                    
+        	             <!--  
+    	                        
+        	               -->
+    							</tr></table>
+                            
+    
+                            
+                        </div>
+                        <div id="bottomreturn">
+
+
+
+
+
+
+
+
+
+<form name="loginForm" method="post" action="/Student/returnAction.do"><input type="hidden" name="org.apache.struts.taglib.html.TOKEN" value="a919bae0666f492073aaadb7a354880e"><input type=hidden name="parameter(groupIndex)" value="null"/><input type=hidden name="parameter(menuItem)" value="null"/>
+
+<input type="hidden" name="returnAddress" value="/startAction.do">
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+ <input type="button" name="dummy" accesskey="r" value="    بازگشت" onclick="goBackAndRefreshIfPossible(this.form)" class="returnbutton2">
+
+
+
+
+
+
+
+</form>
+
+</div>
+                        <div style="clear:both"></div>
+                    </div>
+                </div>
+            </div>
+            </td></tr></table>
+        </td></tr><tr><td class="maintable-footer">
+          <div id="footer">
+              
+
+
+
+
+
+
+
+<span dir="rtl">
+    کلیه حقوق استفاده از این نسخه سیستم آموزشیار© متعلق به "
+    <a target='_blank' href=https://www.iau.ac.ir/>دانشگاه آزاد اسلامی</a>
+    " است. (1399)
+
+</span>
+
+          </div>
+        </td></tr></table>
+    </div>
+    <div id="minwidth"></div>
+
+
+<input type="hidden" id="menuHelpId" name="parameter(menuHelpId)" value="_" />
+<input type="hidden" id="menuName" name="parameter(menuName)" value="null" />
+
+    <div id="overDiv" style="position: absolute; z-index:200; display: none;"></div>
+    
+    <input type="hidden" id="menuGroupIndex" name="parameter(groupIndex)" value="" />
+    <input type="hidden" id="menuItemIndex" name="parameter(menuItem)" value="" />
+    
+    <script>
+    	dojo.addOnLoad(function() {
+    		var showhide=dojo.cookie("showhidecookie");
+    		if("0"==showhide){
+    			dojo.style("sidebar", "display", "none"); 
+    			
+    			arrowLeft();
+    			dojo.style("logo2", "display", "block");  
+        	}else{
+        		dojo.style("logo2", "display", "none");
+        	}
+    	});
+    </script>
+</body>
+
+<script type="text/javascript">
+
+ dojo.addOnLoad(function() {
+      var mgtextarea = new dijit.form.Textarea({
+          name: "mgtextarea",
+          style: "width:100%; height:25px; display:none;",
+          onChange: function (value)
+          {
+  			updateMenuGuideValue(document.getElementById("menuHelpId").value,encodeURI(value),document.getElementById("menuName").value);
+			if (value == null || value == "") {
+				value = " ";
+			}
+  			document.getElementById("helpText").innerHTML=value.replace(/\n/g,"<br>").replace(/ /g,"&nbsp;");
+          },
+          onBlur: function () {
+        	  dojo.style("mgtextarea", "display", "none");
+   			  dojo.style("mgdiv", "display", "block");
+          }
+      
+      },
+      "mgtextarea");
+  });
+ 
+function goEdit() {
+	dojo.style("mgtextarea", "display", "block");
+	dojo.style("mgdiv", "display", "none");
+	document.getElementById('mgtextarea').focus();
+}
+
+function highlight() {
+	dojo.style("mgdiv", "color", "#575757");
+	dojo.style("mgdiv", "background", "#E0F0FD"); 
+}
+function nonhighlight() {
+	dojo.style("mgdiv", "color", "black");
+	dojo.style("mgdiv", "background", "");
+}
+
+function refineText(str) {
+  if ( str == null )
+    return "";
+  return str.replace("\n", "<br>").replace("\r", "<br>");
+}
+
+function updateMenuGuideValue(id,value,name){
+	startAjaxStatus();
+	dojo.xhrGet({
+		   url:"menuGuideAction.do?dispatch=commitPageGuide&id="+id+"&val="+value+"&name="+name+"&ajax=true&honop=&_H0__="+160,
+		   load: function(data){
+			   stopAjaxStatus();
+		   },
+		   error:function(e){
+			   stopAjaxStatus();
+			   alert(e);
+		   }
+		});
+}
+
+function startAjaxStatus(){
+	var dialogId="ndlg_status";
+	var dlg = new dijit.Dialog({
+		   id:dialogId,
+		   content:"<div style='width:400px'>لطفا چند لحظه صبر نمایید ...</div><br/><br/>"+"<div>"+closeButton(dialogId)+"</div>",
+		   style:"position:relative"
+	});
+
+	dlg.show();
+	removeXButton(dialogId);
+	
+}
+
+function stopAjaxStatus(){
+	var dialogId="ndlg_status";
+	dojo.query("#"+dialogId+" #ajaxStat").forEach(dojo.destroy);
+	
+	var dlg=dijit.byId(dialogId);
+	if(dlg!=null){
+		try{dlg.destroy();}catch(e){}
+	}
+}
+
+function isArrowLeft(){
+	return dojo.hasClass("showhide","myarrow-left");
+}
+function arrowRight(){
+	dojo.removeClass("showhide");
+	dojo.addClass("showhide","myarrow-right");
+}
+function arrowLeft(){
+
+	dojo.removeClass("showhide");
+	dojo.addClass("showhide","myarrow-left");
+		
+}
+function doShowHide(){
+	var b=dijit.byId("showhide");
+	dojo.style("logo2", "display", "block");
+	if(isArrowLeft()){
+		dojo.fadeIn({
+		    node:"sidebar",  
+		    beforeBegin: function(n){
+		    	dojo.cookie("showhidecookie", "1", {expires: 100000 });
+				arrowRight();
+				dojo.style("sidebar", "display", "block");
+						
+				dojo.fadeOut({node:"logo2"}).play();			
+		    }
+		  
+		}).play();
+				
+	}else{
+		dojo.fadeOut({
+		    node:"sidebar",  
+		    onEnd: function(n){
+		    	dojo.cookie("showhidecookie", "0", {expires: 100000 });
+				arrowLeft();
+				dojo.style("sidebar", "display", "none");																		
+
+				dojo.fadeIn({node:"logo2"}).play();		
+		    }
+		  
+		}).play();
+							
+	}
+	try{
+		setupOnLoad();
+	}catch(e){
+		alert(e);
+	}		
+}
+
+</script>
+
+</html>
